@@ -19,23 +19,27 @@
 
 # i = C(234,43)
 
-# print(i.mro())
+# print(C.__mro__)
 
 
 
 class Demo:
-    # def __new__(self, *args, **kwargs):
-    #     print(*args)
-    #     print(**kwargs)
-    #     return self
-
-    def __init__(self):
+    def __new__(cls, *args, **kwargs):
         print("34")
-        pass
+        return object.__new__(cls)
+        # return super().__new__(cls)
+       
+      
 
-    def __call__(self, *args , **kwds):
-        print("234")
-        pass
+    # def __init__(self):
+    #     print("34")
+    #     pass
+
+
+    # it make the the object callable
+    # def __call__(self, *args , **kwds):
+    #     print("234")
+    #     pass
 
     def __str__(self) -> str:
         return "et"
@@ -46,5 +50,6 @@ class Demo:
 
 
 s = Demo()
-print(s.mro())
+# print(s())
 print(s.test())
+# print(s.test())
