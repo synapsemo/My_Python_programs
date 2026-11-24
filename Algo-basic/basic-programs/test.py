@@ -25,7 +25,6 @@
 
 class Demo:
     def __new__(cls, *args, **kwargs):
-        print("34")
         return object.__new__(cls)
         # return super().__new__(cls)
        
